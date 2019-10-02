@@ -1,0 +1,63 @@
+html {
+  padding: 6px;
+  user-select: none;
+}
+header {
+  -webkit-app-region: drag;
+  height: 39px;
+  background: black;
+  border-radius: 3px 3px 0 0;
+  color: white;
+}
+header button {
+  -webkit-app-region: no-drag;
+  height: 33px;
+  width: 31px;
+  border: none;
+  outline: none;
+  font-size: 26px;
+  background: black;
+}
+body {
+  height: calc(100vh - 12px);
+  box-shadow: #0007 0px 0px 7px;
+  border-radius: 3px;
+  margin: 0;
+}
+svg {
+  position: relative;
+  shape-rendering: crispEdges;
+}
+
+main.noConversation #bottom-button-container, 
+main.noConversation message-send {
+  display: none;
+}
+
+#titlebar {
+  display: flex;
+}
+#titlebar #title {
+  text-align: center;
+  line-height: 39px;
+  font-size: 17px;
+  flex-grow: 1;
+}
+#container {
+  background: white;
+  height: calc(100% - 39px);
+  border-radius: 0 0 3px 3px;
+  display: flex;
+}
+#message-list {
+  flex-grow: 1;
+  width: 100%;
+  padding-bottom: 30px;
+  overflow-y: auto;
+  user-select: text;
+}
+#bottom-button-container {
+  height: 42px;
+  text-align: right;
+  -webkit-app-region: drag;
+}

@@ -1,0 +1,35 @@
+{
+  "name": "cqnode-devtool",
+  "version": "0.1.0",
+  "description": "CQNode开发者工具",
+  "main": "dist/electron.js",
+  "scripts": {
+    "test": "npm run build&&npm run start",
+    "start": "electron .",
+    "build": "tsc&&xcopy /E /Y assets dist",
+    "dist": "electron-builder"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://dislido:Lido2263@github.com/dislido/cqnode-devtool.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dislido/cqnode-devtool/issues"
+  },
+  "homepage": "https://github.com/dislido/cqnode-devtool#readme",
+  "dependencies": {
+    "@dislido/cqnode": "^2.3.1"
+  },
+  "devDependencies": {
+    "electron-builder": "^21.2.0",
+    "electron": "^6.0.8"
+  },
+  "build": {
+    "asar": false,
+    "directories": {
+      "output": "build"
+    }
+  }
+}
