@@ -130,7 +130,7 @@ export class HTMLConversationListElement extends HTMLElement {
     if (!conver) {
       if (typeof data === 'string') {
         conver = this.addConversation(id, type, data);
-      } if (type === 'group') {
+      } else if (type === 'group') {
         const group = $robot.inf.groupList.find(it => it.group_id === parseInt(id));
         conver = this.addConversation(id, type, group ? group.group_name : `群${id}`);
       } else if (type === 'private') {

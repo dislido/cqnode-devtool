@@ -34,22 +34,24 @@ customElements.define('maximize-button', class extends HTMLElement {
     button.unmaximize [name="unmaximize"] {
       display: inline;
     }`));
-    
-    shadowRoot.appendChild(html('button', { class: 'maximize', title: '最大化' }, [
+    shadowRoot.appendChild(html('button', { class: 'maximize', title: '最大化', $click: this.handleClick }, [
       ['slot', { name: 'maximize' }],
       ['slot', { name: 'unmaximize' }],
     ], btn => {
       btn.addEventListener('click', () => {
-        if (btn.className === 'maximize') {
-          remote.getCurrentWindow().maximize();
-          btn.className = 'unmaximize';
-          btn.setAttribute('title', '还原');
-        } else {
-          remote.getCurrentWindow().unmaximize();
-          btn.className = 'maximize';
-          btn.setAttribute('title', '最大化');
-        } 
       });
     }));
+  }
+  handleClick = (ev: MouseEvent) => {
+    const btn = ev.target as HTMLButtonElement;
+    if (btn.className === 'maximize') {
+      remote.getCurrentWindow().maximize();
+      btn.className = 'unmaximize';
+      btn.setAttribute('title', '还原');
+    } else {
+      remote.getCurrentWindow().unmaximize();
+      btn.className = 'maximize';
+      btn.setAttribute('title', '最大化');
+    } 
   }
 });
